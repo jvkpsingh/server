@@ -30,7 +30,7 @@ import com.vaadin.v7.ui.TextField;
 public class AddressbookUI extends UI {
 
     /*
-     * Hundreds of widgets. Vaadin's user interface components are just Java
+     * Hundreds of widgets. Vaadin's user interface components are  the just Java
      * objects that encapsulate and handle cross-browser support and
      * client-server communication. The default Vaadin components are in the
      * com.vaadin.ui package and there are over 500 more in
