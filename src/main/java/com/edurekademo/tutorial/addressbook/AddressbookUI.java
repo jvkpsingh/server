@@ -51,7 +51,7 @@ public class AddressbookUI extends UI {
     /*
      * The "Main method".
      *
-     * This is the entry point method executed to initialize and configure the
+     * This is the entry point method executed to initialize and the configure the
      * visible user interface. Executed on every browser reload because a new
      * instance is created for each web page loaded.
      */
