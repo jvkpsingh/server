@@ -1,0 +1,86 @@
+pipeline{
+    agent any
+    environment {
+        TOMCAT_HOME ="/opt/apache-tomcat-9.0.89"
+    }
+    stages{
+        stage("chaeckout the code from Git repositry(git hub)")
+        {
+            steps{
+                git url: "https://github.com/jvkpsingh/server.git"
+            }
+        }
+        stage("clear the target")
+        {
+            steps{
+                sh "mvn clean"
+            }
+        }
+        stage("validate the checkout code first")
+        {
+            steps{
+                sh "mvn validate"
+            }
+        }
+            stage("after validate compile the code")
+        {
+            steps{
+                sh "mvn compile"
+            }
+        }
+           stage("after compile test the code")
+        {
+            steps{
+                sh "mvn test"
+            }
+        }
+           stage("after test QA the code")
+        {
+            steps{
+                sh "mvn checkstyle:checkstyle"
+            }
+        }
+           stage("after QA, packaging the code")
+        {
+            steps{
+                sh "mvn package"
+            }
+        }
+           stage("after package verify the code")
+        {
+            steps{
+                sh "mvn verify"
+            }
+        }
+        stage("deploy the war file on tomcat server")
+        {
+            steps{
+                sh "sudo cp -f /var/lib/jenkins/workspace/training/target/addressbook.war /opt/apache-tomcat-9.0.89/webapps"
+            }
+        }
+        stage("shutdown")
+        {
+            steps{
+                sh  "${env.TOMCAT_HOME}/bin/shutdown.sh || true"
+            }
+        }
+        stage("sleep for 10 second")
+        {
+            steps{
+                echo "sleep for 10 second"
+                sleep 10
+            }
+        }
+        stage("startup")
+        {
+            steps{
+                sh  "${env.TOMCAT_HOME}/bin/startup.sh || true"
+            }
+        }
+        
+        
+    }
+}
+
+
+
