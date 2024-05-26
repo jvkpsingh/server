@@ -77,7 +77,11 @@ pipeline{
                 sh  "${env.TOMCAT_HOME}/bin/startup.sh || true"
             }
         }
-        
+        post{
+            success{
+                emailext body: 'email sent out from jenkins', subject: 'build suuccess', to: 'kundanpvj123@gmail.com'
+            }
+        }
         
     }
 }
