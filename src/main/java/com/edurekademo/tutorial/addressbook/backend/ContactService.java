@@ -23,7 +23,7 @@ public class ContactService {
     static String[] lnames = { "Smith", "Johnson", "Williams", "Jones",
             "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor",
             "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin",
-            "Thompson", "Young", "King", "Robinson", "prity", "singh", "kumar" };
+            "Thompson", "Young", "King", "Robinson", "prity", "singh", "jitendra" };
 
     private static ContactService instance;
 
