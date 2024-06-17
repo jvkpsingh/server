@@ -11,6 +11,6 @@ RUN rm -r /opt/apache-tomcat-9.0.89/conf/tomcat-users.xml
 ADD tomcat-users.xml /opt/apache-tomcat-9.0.89/conf
 RUN rm -r /opt/apache-tomcat-9.0.89/webapps/manager/META-INF/context.xml
 ADD context.xml /opt/apache-tomcat-9.0.89/webapps/manager/META-INF
-EXPOSE 8090/tcp
+EXPOSE 8080/tcp
 CMD ["/opt/apache-tomcat-9.0.89/bin/catalina.sh", "run"]
                                                               
