@@ -19,3 +19,4 @@ spec:
         image: jvkpsingh/addressbook:v1
         ports:
         - containerPort: 80
+        
