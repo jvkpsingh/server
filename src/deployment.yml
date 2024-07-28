@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: addressbook
-        image: jvkpsingh/addressbook 
+        image: jvkpsingh/addressbook:v1
         ports:
         - containerPort: 80
