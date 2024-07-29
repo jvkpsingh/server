@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-deployment
+  namespace: argocd
   labels:
     app: my-app
 spec:
@@ -19,4 +20,3 @@ spec:
         image: jvkpsingh/addressbook:v1
         ports:
         - containerPort: 80
-        
