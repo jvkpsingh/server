@@ -8,6 +8,6 @@ spec:
   selector:
     app: addressbook
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 8080
+    targetPort: 8080
     nodePort: 30080  # You can change this to any valid port in the range
